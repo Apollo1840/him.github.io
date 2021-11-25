@@ -1,0 +1,52 @@
+.cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+.cover>div {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.cover>img {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cover-fade {
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: 2.0s ease-in 0.8s;
+    pointer-events: none;
+}
+
+.cover-title-fade {
+    opacity: 0;
+    transition: 0.8s ease-in;
+}
+
+.cover-hint {
+    opacity: 0;
+}
+
+.cover-hint-show {
+    opacity: 1;
+    transition: opacity 1.5s ease-in 1.5s;
+}
+
+.cover-hint-hide {
+    opacity: 0;
+    transition: opacity 1.5s ease-in 0s;
+}
+
+.cover-loader-hide {
+    opacity: 0;
+    transition: opacity 0.5s ease-in 0s;
+}

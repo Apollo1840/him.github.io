@@ -1,0 +1,353 @@
+<!-- 
+    Page "HIM"
+
+    Designed by Joey Lai
+    Made by Xuan25 <shanboxuan@me.com>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIM</title>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+
+    <!-- Basic -->
+    <style>
+        body {
+            margin: 0%;
+            padding: 0%;
+        }
+    </style>
+
+    <script src="script/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="style/font.css">
+
+    <!-- Cover -->
+    <link rel="stylesheet" href="style/cover.css">
+    <script src="script/cover.js"></script>
+
+    <!-- Content -->
+    <link rel="stylesheet" href="style/main.css">
+
+    <script src="script/stories-lowres.js"></script>
+    <script src="script/canvas.js"></script>
+    <script src="script/contacts.js"></script>
+
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js" crossorigin="anonymous"></script>
+
+    <!-- Tabs -->
+    <link rel="stylesheet" href="style/tabs.css">
+    <script src="script/tabs.js"></script>
+
+    <!-- Responsive -->
+    <link rel="stylesheet" href="style/responsive.css">
+</head>
+
+<body>
+
+    <!-- Cover -->
+    <div id="cover" class="cover">
+        <img id="cover-mask" src="img/cover_mask.png" alt="cover-mask"></img>
+        <img id="cover-title" src="img/cover_title.png" alt="cover-title"></img>
+        <img id="cover-hint" class="cover-hint" src="img/cover_hint.png" alt="cover-hint"></img>
+        <div id="cover-loader"></div>
+
+        <style>
+            #cover-loader {
+                background-color: #a9a9a9;
+            }
+        </style>
+
+        <script>
+            $("#cover-mask").on("load", onCoverLayerLoad)
+            $("#cover-title").on("load", onCoverLayerLoad)
+            $("#cover-hint").on("load", onCoverLayerLoad)
+        </script>
+    </div>
+
+    <!-- Main -->
+    <main id="main" class="block-center">
+        <h1>
+            <img src="img/title.png" alt="title" class="block-center" width="30%">
+        </h1>
+        <div>
+            <ul id="tabs">
+                <li><a href="#" name="tab1">PART 1</a></li>
+                <li><a href="#" name="tab2">PART 2</a></li>
+                <li><a href="#" name="tab3">PART 3</a></li>
+            </ul>
+            <div id="content">
+                <!-- tab 1 -->
+                <div id="tab1">
+                    <h2 class="loading-hint">
+                        Loading...
+                    </h2>
+
+                    <canvas id="canvasA" width="700" height="500" class="block-center story-canvas"></canvas>
+                    <canvas id="canvasATemp" width="700" height="500" class="block-center temp-canvas"></canvas>
+
+                    <div class="canvas-control">
+                        <div>
+                            <button id="previousABtn">
+                                -
+                            </button>
+                            <button id="nextABtn">
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- tab 2 -->
+                <div id="tab2">
+                    <h2 class="loading-hint">
+                        Loading...
+                    </h2>
+
+                    <canvas id="canvasB" width="700" height="500" class="block-center story-canvas"></canvas>
+                    <canvas id="canvasBTemp" width="700" height="500" class="block-center temp-canvas"></canvas>
+
+                    <div class="canvas-control">
+                        <div>
+                            <button id="previousBBtn">
+                                -
+                            </button>
+                            <button id="nextBBtn">
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- tab 3 -->
+                <div id="tab3">
+
+                    <div class="contacts-container">
+                        <div>
+                            <div id="contacts-story">
+                                <p>
+                                    No, He was never there.
+                                </p>
+                                <p>
+                                    He has never came to my house, and I no longer lived there.
+                                </p>
+                            </div>
+
+                            <div id="contacts" class="contacts-underlayer">
+                                <div>
+                                    <h4>
+                                        Contacts
+                                    </h4>
+                                    <div>
+                                        <span>
+                                            <span class="iconify" data-icon="simple-icons:pixiv"></span>
+                                            <a href="https://www.pixiv.net/users/3711676/illustrations" target="_blank" rel="noopener noreferrer">Joey1994</a>
+                                        </span>
+                                        <span>
+                                            <span class="iconify" data-icon="simple-icons:sinaweibo"></span>
+                                            <a href="https://weibo.com/modyen" target="_blank" rel="noopener noreferrer">@莫迪安</a>
+                                        </span>
+                                        <span>
+                                            <span class="iconify" data-icon="bi:instagram"></span>
+                                            <a href="https://www.instagram.com/joeylai14/" target="_blank" rel="noopener noreferrer">Joey Lai</a>
+                                        </span>
+                                        <span>
+                                            <span class="iconify" data-icon="ri:bilibili-fill"></span>
+                                            <a href="https://space.bilibili.com/2047950" target="_blank" rel="noopener noreferrer">@莫迪安</a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <img id="layerC0" class="contacts-layer" src="img/C6_small.png" alt="">
+                        <img id="layerC1" class="contacts-layer" src="img/C5_small.png" alt="">
+                        <img id="layerC2" class="contacts-layer" src="img/C4_small.png" alt="">
+                        <img id="layerC3" class="contacts-layer" src="img/C3_small.png" alt="">
+                        <img id="layerC4" class="contacts-layer" src="img/C2_small.png" alt="">
+                        <img id="layerC5" class="contacts-layer" src="img/C1_small.png" alt="">
+                    </div>
+
+
+                    <div class="canvas-control">
+                        <div>
+                            <button id="previousCBtn">
+                                -
+                            </button>
+                            <button id="nextCBtn">
+                                +
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- description -->
+        <div id="description">
+            <!-- description 1 -->
+            <div id="tab1-desc">
+                <div id="desc-1-5">
+                    <h2>
+                        #1
+                    </h2>
+                    <p>
+                        How can we describe a person?
+                    </p>
+                    <p>
+                        Appearance, body shape, tone of voice. All well and good, but there seems to be more to it than
+                        that.<br>
+                        What is a human being except the parts that can be seen or felt?
+                    </p>
+                </div>
+                <div id="desc-1-4">
+                    <h2>
+                        #2
+                    </h2>
+                    <p>
+                        I see people as stories, stories that are connected to each other and build up our souls.<br>
+                        An event or a conversation can make a person understand behavior, a personality more than words.
+                    </p>
+                    <p>
+                        As you can see, I am an ordinary person with passion for painting and music, but I believe there
+                        is something else you feel from these pictures, they are not simply facts?
+                    </p>
+                </div>
+                <div id="desc-1-3">
+                    <h2>
+                        #3
+                    </h2>
+                    <p>
+                        I owned a piano before I was four, and my dad gave it to me as a gift for my birthday.<br>
+                        It was always carefully placed in the most prominent corner of the living room, no matter where
+                        we moved.
+                    </p>
+                </div>
+                <div id="desc-1-2">
+                    <h2>
+                        #4
+                    </h2>
+                    <p>
+                        Mr. Sun was my second piano teacher. I went to visit him regularly to take his lessons until I
+                        went to college in another province.
+                    </p>
+                    <p>
+                        To dress the piano beautifully, my mother decorated it with two different covers, dust-proof
+                        mats and various ornaments, and even the back wall could not be left empty.
+                    </p>
+                </div>
+                <div id="desc-1-1">
+                    <h2>
+                        #5
+                    </h2>
+                    <p>
+                        Practice, of course, is never easy, and as with any other type of pressure, the practice time
+                        can be extremely long, boring and endless.<br>
+                        My evasion and absent-mindedness were clear to Sun, who reported to my mother that I was
+                        chronically behind in my schedule, thus having the most intense quarrel between my mother and
+                        me.
+                    </p>
+                    <p>
+                        "If that’s what you want, to stop, I will have the piano smashed tomorrow."<br>
+                        She left the words and stormed out of room.
+                    </p>
+                    <p>
+                        I had to ask my mother for forgiveness the next day, and for the first time I was acutely aware
+                        that I was tied to something I couldn't let go.
+                    </p>
+                </div>
+            </div>
+             <!-- description 2 -->
+            <div id="tab2-desc">
+                <div id="desc-2-5">
+                    <h2>
+                        #1
+                    </h2>
+                    <p>
+                        You may be wondering, what do these stories mean?
+                    </p>
+                    <p>
+                        This question has also trapped me for a long time, why do people always use stories of their
+                        life to illustrate who they are? Many objects don't have any special meaning to anybody else. It
+                        seems that my memories and feelings can't exist without me, right?
+                    </p>
+                    <p>
+                        I'm not a metaphysician, but a person's existence may really be a belief, a belief in being
+                        alive, a belief in the existence of others, a belief in one's own existence. When we lose it, we
+                        cease to exist.
+                    </p>
+                </div>
+                <div id="desc-2-4">
+                    <h2>
+                        #2
+                    </h2>
+                    <p>
+                        Before the summer vacation of 2013, I received a call from my mother telling me that Sun had
+                        passed away due to this stomach cancer he had had for years.<br>
+                        I was stunned, trying to remember all the things he had said and done with me when he was still
+                        teaching me with his piano. What made me feel so hurt?
+                    </p>
+                    <p>
+                        It kept reminding me of the way he smiled. He seemed to be happy every day.
+                    </p>
+                </div>
+                <div id="desc-2-3">
+                    <h2>
+                        #3
+                    </h2>
+                    <p>
+                        I have never had a photo taken with Sun. My mother felt sorry. "It's a shame that we felt too
+                        close to have one."<br>
+                        I agree, we always take things for granted.
+                    </p>
+                    <p>
+                        In fact, we couldn't find his handwriting, or even a simple object that he had given me.
+                    </p>
+                </div>
+                <div id="desc-2-2">
+                    <h2>
+                        #4
+                    </h2>
+                    <p>
+                        When I think of Sun, I think of the European desk clock on our piano. I think of my father
+                        copying part of Sun's home decoration style, a very baroque style with warm colors.
+                    </p>
+                    <p>
+                        I can visualise our annual joint performance on the stage, and thought that I did not get the
+                        top three in the competition, I was not his best student.<br>
+                        I can still remember him inviting me to stay for lunch, and how he told me he couldn't finish
+                        his meal because he'd had half his stomach removed in surgery.
+                    </p>
+                    <p>
+                        His favorite piece was Coral Dance, he adored Richard Clayderman, and he wanted me to listen to
+                        something he'd just improved.
+                    </p>
+                </div>
+                <div id="desc-2-1">
+                    <h2>
+                        #5
+                    </h2>
+                    <p>
+                        It took me years to realize that my mother was closer to Sun than I thought, so I asked her
+                        about him, something I could never know as a student of his.
+                    </p>
+                    <p>
+                        In her eyes, Sun was the same as I had imagined him, chilling and joking around, often taking my
+                        mother to the lesser-known local garage sale in a tracksuit, and even when invited to play at my
+                        father's coffee shop, he wore plain casual clothes.
+                    </p>
+                    <p>
+                        It was like finding a $20 bill in an old jacket and feeling like I was living again in it.
+                    </p>
+                </div>
+            </div>
+        </div>  
+
+    </main>
+
+</body>
+
+</html>
